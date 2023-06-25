@@ -1,5 +1,6 @@
 import time
 
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -13,7 +14,7 @@ from pages.kong_3_page import Kong_3_page
 from pages.main_page import Main_page
 from pages.trekking_tents_page import Trakking_tents_page
 
-
+@allure. description("Test link about")
 def test_buy_trecking_tent():
 
         driver = webdriver.Chrome()
