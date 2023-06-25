@@ -1,5 +1,6 @@
 import time
 import selenium
+import allure
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -41,23 +42,27 @@ class Main_page(Base):
 
 # Methods
     def select_category_tents(self):
-        self.get_select_category_tents()
-        self.click_select_category_tents()
+        with allure.step("Select category tents"):
+            self.get_select_category_tents()
+            self.click_select_category_tents()
 
     def select_category_trekking_tents(self):
-        self.get_select_category_trekking_tents()
-        self.click_select_category_trekking_tents()
+        with allure.step("Select category trekking tents"):
+            self.get_select_category_trekking_tents()
+            self.click_select_category_trekking_tents()
 
     def start(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
+        with allure.step("Start"):
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.get_current_url()
 
     # Method scroll to
     def scroll_to_trekking_tents(self):
-        action = ActionChains(webdriver)
-        t_shirt_red = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
-        action.move_to_element(t_shirt_red)
+        with allure.step("Scroll to trekking tents"):
+            action = ActionChains(webdriver)
+            t_shirt_red = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
+            action.move_to_element(t_shirt_red)
 
 
 

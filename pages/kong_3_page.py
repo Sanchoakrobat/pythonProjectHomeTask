@@ -1,4 +1,6 @@
 import time
+
+import allure
 import selenium
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -44,7 +46,8 @@ class Kong_3_page(Base):
 
 # Methods
     def assert_kong(self):
-        self.assert_word(self.get_name_kong_3(), "Палатка Splav «Kong 3»")
+        with allure.step("Assert kong"):
+            self.assert_word(self.get_name_kong_3(), "Палатка Splav «Kong 3»")
 
 
 

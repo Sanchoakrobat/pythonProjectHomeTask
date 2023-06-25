@@ -1,6 +1,7 @@
 import datetime
 import time
 
+import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -31,11 +32,13 @@ class Base():
         name_screenshot = 'screenshot' + now_date + '.png'
         self.driver.save_screenshot('C:\\Users\\Admin\\PycharmProjects\\pythonProjectHomeTask\\screen\\' + name_screenshot)
 
+
 #  method assert URL
 
     def assert_url(self, result):
-        get_url = self.driver.current_url
-        print(get_url)
-        assert get_url == result
-        print("Good URL")
+        with allure.step("assert_url"):
+            get_url = self.driver.current_url
+            print(get_url)
+            assert get_url == result
+            print("Good URL")
 

@@ -1,4 +1,6 @@
 import time
+
+import allure
 import selenium
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -100,19 +102,20 @@ class Cart_page(Base):
 
 # Methods
     def login_connection(self):
-        self.input_id_phone("+9999999999")
-        self.input_id_email("kashin.alexandr.vasilevich@gmail.com")
-        self.click_next_btn()
-        self.input_id_password("QjnfmzVQ")
-        self.click_next_btn()
-        self.click_checkbox_id_delivery_type_1()
-        self.click_next_btn()
-        self.input_id_name("Ivan Ivanov")
-        self.input_id_zip_code("610000")
-        self.input_id_address("Петровка 38")
-        self.click_next_btn()
-        self.click_checkbox_comment()
-        self.get_screenshot()
+        with allure.step("login_connection"):
+            self.input_id_phone("+9999999999")
+            self.input_id_email("kashin.alexandr.vasilevich@gmail.com")
+            self.click_next_btn()
+            self.input_id_password("QjnfmzVQ")
+            self.click_next_btn()
+            self.click_checkbox_id_delivery_type_1()
+            self.click_next_btn()
+            self.input_id_name("Ivan Ivanov")
+            self.input_id_zip_code("610000")
+            self.input_id_address("Петровка 38")
+            self.click_next_btn()
+            self.click_checkbox_comment()
+            self.get_screenshot()
 
 
 
