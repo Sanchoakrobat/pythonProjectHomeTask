@@ -24,6 +24,8 @@ class Main_page(Base):
 # Getters
     def get_select_category_tents(self):
         return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_tents)))
+    # выбирает категорию товаров
+
 
     def get_select_category_trekking_tents(self):
         return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
@@ -63,7 +65,7 @@ class Main_page(Base):
             action = ActionChains(webdriver)
             t_shirt_red = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
             action.move_to_element(t_shirt_red)
-
+# прокручивает страницу до элемента
 
 
 

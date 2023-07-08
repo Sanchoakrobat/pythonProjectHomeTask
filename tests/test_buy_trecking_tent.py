@@ -26,7 +26,6 @@ def test_buy_trecking_tent():
         mp = Main_page(driver)
         mp.select_category_tents()
 
-        # driver.execute_script("window.scroll(0,270)")
         scrl = Main_page(driver)
         scrl.scroll_to_trekking_tents()
 
@@ -56,9 +55,6 @@ def test_buy_trecking_tent():
         log.login_connection()
 
         time.sleep(10)
-
-
-
 
 
         print("Finish smoke test")

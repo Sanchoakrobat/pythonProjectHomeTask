@@ -48,7 +48,7 @@ class Kong_3_page(Base):
     def assert_kong(self):
         with allure.step("Assert kong"):
             self.assert_word(self.get_name_kong_3(), "Палатка Splav «Kong 3»")
-
+# сравнивает надпись с заданной
 
 
 

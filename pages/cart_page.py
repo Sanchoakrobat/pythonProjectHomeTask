@@ -33,12 +33,15 @@ class Cart_page(Base):
 # Getters
     def get_id_phone(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_phone)))
+# обращается к локатору телефон
 
     def get_id_email(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_email)))
+    # обращается к локатору имейл
 
     def get_next_btn(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.next_btn)))
+
 
     def get_id_password(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_password)))
