@@ -1,20 +1,16 @@
-import time
-import selenium
 import allure
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from base.base_class import Base
 
 
 class Main_page(Base):
     url = 'https://xn----7sbb4ac0ad0be6cf.xn--p1ai/'
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
  # Locators
     category_tents = "//a[@data-cat-id='26']"
@@ -26,10 +22,8 @@ class Main_page(Base):
         return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_tents)))
     # выбирает категорию товаров
 
-
     def get_select_category_trekking_tents(self):
         return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
-
 
 
 # Actions
@@ -59,13 +53,13 @@ class Main_page(Base):
             self.driver.maximize_window()
             self.get_current_url()
 
-    # Method scroll to
+# Method scroll to
     def scroll_to_trekking_tents(self):
         with allure.step("Scroll to trekking tents"):
             action = ActionChains(webdriver)
             t_shirt_red = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.category_trecking_tents)))
             action.move_to_element(t_shirt_red)
-# прокручивает страницу до элемента
+        # прокручивает страницу до элемента
 
 
 

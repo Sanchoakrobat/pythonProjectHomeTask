@@ -1,18 +1,12 @@
 import time
-
 import allure
-import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 from base.base_class import Base
 from pages.cart_page import Cart_page
 from pages.kong_3_page import Kong_3_page
 from pages.main_page import Main_page
 from pages.trekking_tents_page import Trakking_tents_page
+
 
 @allure. description("Test buy trecking tent")
 def test_buy_trecking_tent():
@@ -55,7 +49,6 @@ def test_buy_trecking_tent():
         log.login_connection()
 
         time.sleep(10)
-
 
         print("Finish smoke test")
         driver.quit()

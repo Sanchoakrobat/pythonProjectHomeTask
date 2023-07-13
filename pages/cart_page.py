@@ -1,21 +1,13 @@
-import time
-
 import allure
-import selenium
-from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from base.base_class import Base
 
 
 class Cart_page(Base):
 
-
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
  # Locators
     id_phone = "//input[@id='id_phone']"
@@ -29,11 +21,10 @@ class Cart_page(Base):
     checkbox_comment = "//label[@for='id_m-5']"
 
 
-
 # Getters
     def get_id_phone(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_phone)))
-# обращается к локатору телефон
+    # обращается к локатору телефон
 
     def get_id_email(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_email)))
@@ -41,7 +32,6 @@ class Cart_page(Base):
 
     def get_next_btn(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.next_btn)))
-
 
     def get_id_password(self):
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self.id_password)))
@@ -101,8 +91,6 @@ class Cart_page(Base):
         print("Click checkbox comment == Спасибо, вы клёвые ^_^")
 
 
-
-
 # Methods
     def login_connection(self):
         with allure.step("login_connection"):
@@ -119,7 +107,7 @@ class Cart_page(Base):
             self.click_next_btn()
             self.click_checkbox_comment()
             self.get_screenshot()
-
+        # вводит все необходимые данные для отправки товара
 
 
 

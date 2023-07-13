@@ -1,22 +1,15 @@
-import time
-
 import allure
-import selenium
-from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from base.base_class import Base
+
 
 class Kong_3_page(Base):
 
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
- # Locators
+# Locators
     name_kong_3 = "//h1[@class='mt-1']"
     button_buy = "//button[@class='btn btn-lg btn-info ']"
     button_cart = "//a[@href='/cart/']"
@@ -48,7 +41,7 @@ class Kong_3_page(Base):
     def assert_kong(self):
         with allure.step("Assert kong"):
             self.assert_word(self.get_name_kong_3(), "Палатка Splav «Kong 3»")
-# сравнивает надпись с заданной
+        # сравнивает надпись с заданной
 
 
 
